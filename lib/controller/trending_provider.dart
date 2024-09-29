@@ -19,7 +19,6 @@ class TrendingProvider with ChangeNotifier {
       final response = await http.get(url);
       if (response.statusCode == 200) {
         final Map<String, dynamic> jsonData = json.decode(response.body);
-        print('API Response: $jsonData'); // Log the response
         trendingData = TrendingModel.fromJson(jsonData);
       } else {
         print('Failed to load data: ${response.statusCode}');
@@ -33,6 +32,6 @@ class TrendingProvider with ChangeNotifier {
     }
   }
 
-  List<Coin>? get coins => trendingData?.coins?.map((e) => e.coin).toList();
+  List<CoinItem>? get coins => trendingData?.coins?.map((e) => e).toList();
   List<Nft>? get nfts => trendingData?.nfts;
 }

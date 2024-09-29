@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:crypto_quotient/const.dart';
-import 'package:crypto_quotient/controller/Tournament_provider.dart';
+import 'package:crypto_quotient/controller/single_coin_provider.dart';
 import 'package:crypto_quotient/controller/coin_search_provider.dart';
 import 'package:crypto_quotient/controller/coinList_provider.dart';
 import 'package:crypto_quotient/controller/trending_provider.dart';
@@ -43,7 +43,7 @@ class _MyAppState extends State<MyApp> {
       providers: [
         ChangeNotifierProvider(create: (context) => CoinListProvider()),
         ChangeNotifierProvider(create: (context) => TrendingProvider()),
-        ChangeNotifierProvider(create: (context) => TournamentProvider()),
+        ChangeNotifierProvider(create: (context) => SingleCoinProvider()),
         ChangeNotifierProvider(create: (context) => CoinSearchProvider()),
         ChangeNotifierProvider(create: (context) => NewsProvider()),
       ],

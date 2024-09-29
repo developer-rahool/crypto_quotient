@@ -1,4 +1,4 @@
-class CoinListModel {
+class SingleCoinModel {
   String id;
   String symbol;
   String name;
@@ -16,7 +16,7 @@ class CoinListModel {
   double totalSupply;
   double maxSupply;
 
-  CoinListModel({
+  SingleCoinModel({
     required this.id,
     required this.symbol,
     required this.name,
@@ -35,8 +35,8 @@ class CoinListModel {
     this.maxSupply = 0.0, // Optional, can be null or 0.0
   });
 
-  factory CoinListModel.fromJson(Map<String, dynamic> json) {
-    return CoinListModel(
+  factory SingleCoinModel.fromJson(Map<String, dynamic> json) {
+    return SingleCoinModel(
       id: json['id'],
       symbol: json['symbol'],
       name: json['name'],

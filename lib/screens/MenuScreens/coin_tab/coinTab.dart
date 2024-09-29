@@ -103,20 +103,21 @@ class _CoinScreenState extends State<CoinScreen> {
               ),
               const SizedBox(height: 15),
               Expanded(
-                child: FutureBuilder<List<CoinList>>(
+                child: FutureBuilder<List<CoinListModel>>(
                   future: provider.coinList,
                   builder: (context, snapshot) {
                     if (snapshot.connectionState == ConnectionState.waiting) {
                       return const Center(child: CircularProgressIndicator());
                     } else if (snapshot.hasError) {
-                      return Center(child: Text('Error: ${snapshot.error}'));
+                      return const Center(
+                          child: Text('Sorry! Service got down, try again.'));
                     } else if (!snapshot.hasData || snapshot.data!.isEmpty) {
                       return Center(
                           child: Text(AppLocalizations.translate(
                               'No Records', currentLang!)));
                     }
 
-                    List<CoinList> coins = snapshot.data!;
+                    List<CoinListModel> coins = snapshot.data!;
 
                     if (provider.showTopGainers) {
                       coins = provider.filterTopGainers(coins);
@@ -153,7 +154,8 @@ class _CoinScreenState extends State<CoinScreen> {
                                                 width: 40),
                                             const SizedBox(width: 6),
                                             SizedBox(
-                                              width: screenWidth(context) * 0.3,
+                                              width:
+                                                  screenWidth(context) * 0.29,
                                               child: Text(
                                                 coin.name,
                                                 style: const TextStyle(
@@ -167,14 +169,18 @@ class _CoinScreenState extends State<CoinScreen> {
                                         ),
                                         Container(
                                           height: 30,
-                                          width: 80,
+                                          width: 90,
                                           decoration: BoxDecoration(
-                                              color: mainBlueColor,
+                                              color: coin
+                                                      .priceChangePercentage24H
+                                                      .isNegative
+                                                  ? Colors.red
+                                                  : Colors.green,
                                               borderRadius:
                                                   BorderRadius.circular(10)),
                                           child: Center(
                                               child: Text(
-                                            '\$${coin.currentPrice.toStringAsFixed(2)}',
+                                            '${coin.priceChangePercentage24H}',
                                             style: const TextStyle(
                                                 fontSize: 13,
                                                 color: whiteColor,
@@ -270,7 +276,7 @@ class _CoinScreenState extends State<CoinScreen> {
                                             children: [
                                               Text(
                                                 AppLocalizations.translate(
-                                                    'Price Charge: ',
+                                                    'Current Price: ',
                                                     currentLang!),
                                                 style: const TextStyle(
                                                     fontSize: 16,
@@ -283,7 +289,7 @@ class _CoinScreenState extends State<CoinScreen> {
                                                 width: 6,
                                               ),
                                               Text(
-                                                '${coin.priceChangePercentage24H}',
+                                                '\$${coin.currentPrice}',
                                                 style: const TextStyle(
                                                     fontSize: 14,
                                                     color: darkBlackColor,

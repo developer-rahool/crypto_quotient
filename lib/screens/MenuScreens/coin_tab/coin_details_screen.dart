@@ -8,7 +8,7 @@ import '../../../models/coinlist_model.dart';
 import 'package:fl_chart/fl_chart.dart'; // Chart library
 
 class CoinDetails extends StatefulWidget {
-  final CoinList coin;
+  final CoinListModel coin;
   const CoinDetails({Key? key, required this.coin}) : super(key: key);
 
   @override

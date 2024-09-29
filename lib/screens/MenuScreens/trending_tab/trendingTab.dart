@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-import '../../const.dart';
-import '../../controller/trending_provider.dart';
-import '../../l10n/app_localizations.dart';
+import '../../../const.dart';
+import '../../../controller/trending_provider.dart';
+import '../../../l10n/app_localizations.dart';
+import 'trending_nfts_list.dart';
 
 class TrendingScreen extends StatefulWidget {
   @override
@@ -64,9 +65,10 @@ class _TrendingScreenState extends State<TrendingScreen> {
                       itemBuilder: (context, index) {
                         final nft = nfts[index];
                         return GestureDetector(
-                          // onTap: () {
-                          //   // nextPage(context, CoinDetails(coin: coin));
-                          // },
+                          onTap: () {
+                            // nextPage(context,
+                            //     TrendingNFTSData(data: nfts[index].data!));
+                          },
                           child: Padding(
                             padding: const EdgeInsets.all(8.0),
                             child: Container(
@@ -236,9 +238,12 @@ class _TrendingScreenState extends State<TrendingScreen> {
                       itemBuilder: (context, index) {
                         final coin = coins[index];
                         return GestureDetector(
-                          // onTap: () {
-                          //   // nextPage(context, CoinDetails(coin: coin));
-                          // },
+                          onTap: () {
+                            nextPage(
+                                context,
+                                TrendingNFTSData(
+                                    data: coins[index].item!.data));
+                          },
                           child: Padding(
                             padding: const EdgeInsets.all(8.0),
                             child: Container(
@@ -255,13 +260,14 @@ class _TrendingScreenState extends State<TrendingScreen> {
                                       children: [
                                         Row(
                                           children: [
-                                            Image.network(coin.thumb!,
+                                            Image.network(coin.item!.thumb!,
                                                 width: 40),
                                             const SizedBox(width: 6),
                                             SizedBox(
-                                              width: screenWidth(context) * 0.3,
+                                              width:
+                                                  screenWidth(context) * 0.36,
                                               child: Text(
-                                                coin.name!,
+                                                coin.item!.name!,
                                                 style: const TextStyle(
                                                     fontSize: 16,
                                                     fontWeight:
@@ -280,7 +286,7 @@ class _TrendingScreenState extends State<TrendingScreen> {
                                                   BorderRadius.circular(10)),
                                           child: Center(
                                               child: Text(
-                                            '#${coin.marketCapRank ?? '-'}',
+                                            '${coin.item!.marketCapRank ?? '-'}',
                                             style: const TextStyle(
                                                 fontSize: 13,
                                                 color: whiteColor,
@@ -308,7 +314,7 @@ class _TrendingScreenState extends State<TrendingScreen> {
                                             ),
                                             const SizedBox(width: 6),
                                             Text(
-                                              '${coin.symbol}',
+                                              '${coin.item!.symbol}',
                                               style: const TextStyle(
                                                   fontSize: 14,
                                                   color: darkBlackColor,
@@ -330,7 +336,29 @@ class _TrendingScreenState extends State<TrendingScreen> {
                                             ),
                                             const SizedBox(width: 6),
                                             Text(
-                                              '${coin.id}',
+                                              '${coin.item!.coinId}',
+                                              style: const TextStyle(
+                                                  fontSize: 14,
+                                                  color: darkBlackColor,
+                                                  fontWeight: FontWeight.bold),
+                                              overflow: TextOverflow.ellipsis,
+                                            ),
+                                          ],
+                                        ),
+                                        Row(
+                                          children: [
+                                            Text(
+                                              AppLocalizations.translate(
+                                                  'Price BTC: ', currentLang!),
+                                              style: const TextStyle(
+                                                  fontSize: 16,
+                                                  color: darkBlackColor,
+                                                  fontWeight: FontWeight.bold),
+                                              overflow: TextOverflow.ellipsis,
+                                            ),
+                                            const SizedBox(width: 6),
+                                            Text(
+                                              '${coin.item!.priceBtc}',
                                               style: const TextStyle(
                                                   fontSize: 14,
                                                   color: darkBlackColor,

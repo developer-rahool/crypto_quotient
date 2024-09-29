@@ -2,7 +2,7 @@ import 'package:crypto_quotient/screens/MenuScreens/calculateTab.dart';
 import 'package:crypto_quotient/screens/MenuScreens/coin_tab/coinTab.dart';
 import 'package:crypto_quotient/screens/MenuScreens/newsTab.dart';
 import 'package:crypto_quotient/screens/MenuScreens/searchTab.dart';
-import 'package:crypto_quotient/screens/MenuScreens/trendingTab.dart';
+import 'package:crypto_quotient/screens/MenuScreens/trending_tab/trendingTab.dart';
 import 'package:flutter/material.dart';
 import 'package:crypto_quotient/const.dart';
 
@@ -18,14 +18,20 @@ class MenuScreen extends StatefulWidget {
 
 class _MenuScreenState extends State<MenuScreen> {
   String? currentLang;
-  var selectIndex = 0;
+  var selectIndex = 3;
   final List<Widget> _tabList = [
     const CoinScreen(),
     TrendingScreen(),
     const NewsScreen(),
-    const CalculateTab(),
+    CalculationScreen(),
     const CoinSearchScreen()
   ];
+
+  @override
+  void initState() {
+    widget.onChangeLanguage;
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {

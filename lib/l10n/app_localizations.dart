@@ -11,12 +11,33 @@ class AppLocalizations {
       'Trending': 'Trending',
       'Article': 'Article',
       'Search': 'Search',
-      'Caluculate': 'Caluculate',
       'Search coin': 'Search Coin',
       'Coins': 'Coins',
       'Exchanges': 'Exchanges',
       'Categories': 'Categories',
       'NFTs': 'NFTs',
+
+      //Calculation screen
+      'Quantity': 'Quantity',
+      'Price per coin': 'Price per coin',
+      'Calculate': 'Calculate',
+      'Dogecoin': 'Dogecoin',
+      'Stellar': 'Stellar',
+      'Tron': 'Tron',
+      'Gala': 'Gala',
+      'Initial Investment': 'Initial Investment',
+      'Current Value': 'Current Value',
+      'Current Rate': 'Current Rate',
+      'Profit': 'Profit',
+      'Loss': 'Loss',
+      'Savings': 'Savings',
+      'Change': 'Change',
+      'ROI': 'ROI',
+      'Increase': 'Increase',
+      'Decrease': 'Decrease',
+      'Return': 'Return',
+      'Alert': 'Alert',
+      'OK': 'OK',
 
       //article screen
       'Search article': 'Search article',
@@ -36,6 +57,7 @@ class AppLocalizations {
       'Floor Price: ': 'Floor Price: ',
       'Floor Price BTC: ': 'Floor Price BTC: ',
       'Trending Coins': 'Trending Coins',
+      'Price Change Percentage': 'Price Change Percentage',
 
       //Coin screen
       'Top Gainers': 'Top Gainers',
@@ -65,12 +87,33 @@ class AppLocalizations {
       "Trending": "趋势",
       "Article": "文章",
       "Search": "搜索",
-      "Calculate": "计算",
       "Search coin": "搜索硬币",
       "Coins": "硬币",
       "Exchanges": "交易所",
       "Categories": "类别",
       "NFTs": "NFT",
+
+      //Calculation screen
+      "Calculate": "计算",
+      'Quantity': '数量',
+      'Price per coin': '每枚硬币的价格',
+      'Dogecoin': '狗狗币',
+      'Stellar': '恒星',
+      'Tron': '创',
+      'Gala': '节日',
+      'Initial Investment': '初始投资',
+      'Current Value': '当前值',
+      'Current Rate': '当前利率',
+      'Profit': '利润',
+      'Loss': '损失',
+      'Savings': '储蓄',
+      'Change': '改变',
+      'ROI': '投资回报率',
+      'Increase': '增加',
+      'Decrease': '减少',
+      'Return': '返回',
+      'Alert': '警报',
+      'OK': '好的',
 
       //article screen
       "Search article": "搜索文章",
@@ -90,6 +133,9 @@ class AppLocalizations {
       "Floor Price: ": "地板价：",
       "Floor Price BTC: ": "地板价比特币：",
       "Trending Coins": "热门硬币",
+      'Price Change Percentage': '价格变动百分比',
+      'Price: ': '价格: ',
+      'Price BTC: ': '价格 BTC: ',
 
       //Coin screen
       "Top Gainers": "涨幅榜",
@@ -98,15 +144,16 @@ class AppLocalizations {
       "Low 24H: ": "24小时最低价：",
       "Market Cap: ": "市值：",
       "Price Charge: ": "价格变化：",
+      "Current Price: ": "当前价格",
 
       //Coin detail screen
       "15 Days": "15天",
       "1 Day": "1天",
       "30 Day": "30天",
-      "Circulating Supply": "流通供应量",
-      "Total Supply": "总供应量",
-      "ATH": "历史最高价",
-      "ATH Change %": "历史最高价变化%",
+      "Circulating Supply: ": "流通供应量",
+      "Total Supply: ": "总供应量",
+      "ATH: ": "历史最高价",
+      "ATH Change %: ": "历史最高价变化%",
       "Market Cap Rank: ": "市值排名："
     },
     "hi": {
@@ -118,12 +165,33 @@ class AppLocalizations {
       "Trending": "प्रवृत्ति",
       "Article": "लेख",
       "Search": "खोज",
-      "Calculate": "गणना",
       "Search coin": "सिक्के खोजें",
       "Coins": "सिक्के",
       "Exchanges": "विनिमय",
       "Categories": "श्रेणियाँ",
       "NFTs": "एनएफटी",
+
+      //Calculation screen
+      "Calculate": "गणना",
+      'Quantity': 'मात्रा',
+      'Price per coin': 'मूल्य प्रति सिक्का',
+      'Dogecoin': 'डॉगकॉइन',
+      'Stellar': 'तारकीय',
+      'Tron': 'ट्रोन',
+      'Gala': 'पर्व',
+      'Initial Investment': 'आरंभिक निवेश',
+      'Current Value': 'वर्तमान कीमत',
+      'Current Rate': 'वर्तमान दर',
+      'Profit': 'लाभ',
+      'Loss': 'नुकसान',
+      'Savings': 'बचत',
+      'Change': 'परिवर्तन',
+      'ROI': 'लागत पर लाभ',
+      'Increase': 'बढ़ोतरी',
+      'Decrease': 'घटाना',
+      'Return': 'वापस करना',
+      'Alert': 'चेतावनी',
+      'OK': 'ठीक है',
 
       //article screen
       "Search article": "लेख खोजें",
@@ -143,6 +211,9 @@ class AppLocalizations {
       "Floor Price: ": "फ्लोर मूल्य:",
       "Floor Price BTC: ": "फ्लोर मूल्य बीटीसी:",
       "Trending Coins": "ट्रेंडिंग सिक्के",
+      'Price Change Percentage': 'मूल्य परिवर्तन प्रतिशत',
+      'Price: ': 'कीमत: ',
+      'Price BTC: ': 'कीमत BTC: ',
 
       //Coin screen
       "Top Gainers": "शीर्ष लाभकर्ता",
@@ -151,15 +222,16 @@ class AppLocalizations {
       "Low 24H: ": "24 घंटे का न्यूनतम:",
       "Market Cap: ": "मार्केट कैप:",
       "Price Charge: ": "मूल्य शुल्क:",
+      "Current Price: ": "वर्तमान कीमत",
 
       //Coin detail screen
       "15 Days": "15 दिन",
       "1 Day": "1 दिन",
       "30 Day": "30 दिन",
-      "Circulating Supply": "परिसंचारी आपूर्ति",
-      "Total Supply": "कुल आपूर्ति",
-      "ATH": "एटीएच",
-      "ATH Change %": "एटीएच परिवर्तन %",
+      "Circulating Supply: ": "परिसंचारी आपूर्ति",
+      "Total Supply: ": "कुल आपूर्ति",
+      "ATH: ": "एटीएच",
+      "ATH Change %: ": "एटीएच परिवर्तन %",
       "Market Cap Rank: ": "मार्केट कैप रैंक:"
     }
   };

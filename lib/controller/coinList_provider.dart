@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import '../httpService.dart';
 
 class CoinListProvider with ChangeNotifier {
-  late Future<List<CoinList>> coinList;
+  late Future<List<CoinListModel>> coinList;
   final ScrollController scrollController = ScrollController();
   bool showTopGainers = false;
   bool showTopLosers = false;
@@ -60,19 +60,19 @@ class CoinListProvider with ChangeNotifier {
   //   notifyListeners();
   // }
 
-  List<CoinList> filterTopGainers(List<CoinList> cryptos) {
+  List<CoinListModel> filterTopGainers(List<CoinListModel> cryptos) {
     cryptos.sort((a, b) =>
         b.priceChangePercentage24H.compareTo(a.priceChangePercentage24H));
     return cryptos; // Already sorted in descending order for top gainers
   }
 
-  List<CoinList> filterTopLosers(List<CoinList> cryptos) {
+  List<CoinListModel> filterTopLosers(List<CoinListModel> cryptos) {
     cryptos.sort((a, b) =>
         a.priceChangePercentage24H.compareTo(b.priceChangePercentage24H));
     return cryptos; // Sorted in ascending order for top losers
   }
 
-  List<CoinList> defaultfilter(List<CoinList> cryptos) {
+  List<CoinListModel> defaultfilter(List<CoinListModel> cryptos) {
     return cryptos;
   }
 
