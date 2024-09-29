@@ -18,7 +18,7 @@ class MenuScreen extends StatefulWidget {
 
 class _MenuScreenState extends State<MenuScreen> {
   String? currentLang;
-  var selectIndex = 3;
+  var selectIndex = 0;
   final List<Widget> _tabList = [
     const CoinScreen(),
     TrendingScreen(),

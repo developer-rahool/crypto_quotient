@@ -38,6 +38,8 @@ class AppLocalizations {
       'Return': 'Return',
       'Alert': 'Alert',
       'OK': 'OK',
+      'Please enter valid values for coin quantity and purchase price.':
+          'Please enter valid values for coin quantity and purchase price.',
 
       //article screen
       'Search article': 'Search article',
@@ -76,6 +78,7 @@ class AppLocalizations {
       'ATH': 'ATH',
       'ATH Change %': 'ATH Change %',
       'Market Cap Rank: ': 'Market Cap Rank: ',
+      'Sorry! Service got down, try again.': 'Sorry! Service got down, try again.'
     },
     "zh": {
       "lang": "中文",
@@ -114,6 +117,8 @@ class AppLocalizations {
       'Return': '返回',
       'Alert': '警报',
       'OK': '好的',
+      'Please enter valid values for coin quantity and purchase price.':
+          '请输入硬币数量和购买价格的有效值。',
 
       //article screen
       "Search article": "搜索文章",
@@ -154,7 +159,8 @@ class AppLocalizations {
       "Total Supply: ": "总供应量",
       "ATH: ": "历史最高价",
       "ATH Change %: ": "历史最高价变化%",
-      "Market Cap Rank: ": "市值排名："
+      "Market Cap Rank: ": "市值排名：",
+      'Sorry! Service got down, try again.': '对不起！服务中断，请重试。'
     },
     "hi": {
       "lang": "हिन्दी",
@@ -192,6 +198,8 @@ class AppLocalizations {
       'Return': 'वापस करना',
       'Alert': 'चेतावनी',
       'OK': 'ठीक है',
+      'Please enter valid values for coin quantity and purchase price.':
+          'कृपया सिक्के की मात्रा और खरीद मूल्य के लिए मान्य मान दर्ज करें',
 
       //article screen
       "Search article": "लेख खोजें",
@@ -232,7 +240,8 @@ class AppLocalizations {
       "Total Supply: ": "कुल आपूर्ति",
       "ATH: ": "एटीएच",
       "ATH Change %: ": "एटीएच परिवर्तन %",
-      "Market Cap Rank: ": "मार्केट कैप रैंक:"
+      "Market Cap Rank: ": "मार्केट कैप रैंक:",
+      'Sorry! Service got down, try again.': 'क्षमा मांगना! सेवा बंद हो गई, पुनः प्रयास करें.'
     }
   };
 

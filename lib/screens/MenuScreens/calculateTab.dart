@@ -39,8 +39,9 @@ class _CalculationScreenState extends State<CalculationScreen> {
     double? coinPerRate = double.tryParse(coinPerRateText);
 
     if (coinQuantity == null || coinPerRate == null) {
-      _showAlert(
-          "Please enter valid values for coin quantity and purchase price.");
+      _showAlert(AppLocalizations.translate(
+          'Please enter valid values for coin quantity and purchase price.',
+          currentLang!));
       return;
     }
 
@@ -196,83 +197,89 @@ class _CalculationScreenState extends State<CalculationScreen> {
                       height: 20,
                     ),
               provider.coin.isNotEmpty
-                  ? Column(
-                      children: [
-                        Row(
+                  ? Expanded(
+                      child: SingleChildScrollView(
+                        scrollDirection: Axis.vertical,
+                        child: Column(
                           children: [
-                            Expanded(
-                              child: AppTextFormField(
-                                appController: _quatityController,
-                                hintText: AppLocalizations.translate(
-                                    'Quantity', currentLang!),
-                                maxLengthLine: 1,
-                                onFieldSubmitted: (value) {
-                                  context
-                                      .read<SingleCoinProvider>()
-                                      .fetchSingleCoin(
-                                          query: _searchController.text
-                                              .trim()
-                                              .toLowerCase());
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                              children: [
+                                AppTextFormField(
+                                  width: screenWidth(context) * 0.43,
+                                  appController: _quatityController,
+                                  hintText: AppLocalizations.translate(
+                                      'Quantity', currentLang!),
+                                  maxLengthLine: 1,
+                                  onFieldSubmitted: (value) {
+                                    context
+                                        .read<SingleCoinProvider>()
+                                        .fetchSingleCoin(
+                                            query: _searchController.text
+                                                .trim()
+                                                .toLowerCase());
+                                  },
+                                ),
+                                // const SizedBox(
+                                //   width: 10,
+                                // ),
+                                AppTextFormField(
+                                  width: screenWidth(context) * 0.43,
+                                  appController: _pricepercoinController,
+                                  hintText: AppLocalizations.translate(
+                                      'Price per coin', currentLang!),
+                                  maxLengthLine: 1,
+                                  onFieldSubmitted: (value) {
+                                    context
+                                        .read<SingleCoinProvider>()
+                                        .fetchSingleCoin(
+                                            query: _searchController.text
+                                                .trim()
+                                                .toLowerCase());
+                                  },
+                                ),
+                              ],
+                            ),
+                            const SizedBox(height: 11),
+                            SizedBox(
+                              width: 130,
+                              height: 40,
+                              child: ElevatedButton(
+                                onPressed: () {
+                                  double currentPrice = provider
+                                      .coin.first.currentPrice
+                                      .toDouble();
+                                  calculateValues(
+                                      currentPriceData: currentPrice,
+                                      quantity: _quatityController.text,
+                                      pricePerCoin:
+                                          _pricepercoinController.text);
                                 },
+                                style: ElevatedButton.styleFrom(
+                                    backgroundColor: mainBlueColor),
+                                child: Text(
+                                  AppLocalizations.translate(
+                                      'Calculate', currentLang!),
+                                  style: const TextStyle(
+                                      color: whiteColor, fontSize: 16),
+                                ),
                               ),
                             ),
-                            const SizedBox(
-                              width: 10,
-                            ),
-                            Expanded(
-                              child: AppTextFormField(
-                                appController: _pricepercoinController,
-                                hintText: AppLocalizations.translate(
-                                    'Price per coin', currentLang!),
-                                maxLengthLine: 1,
-                                onFieldSubmitted: (value) {
-                                  context
-                                      .read<SingleCoinProvider>()
-                                      .fetchSingleCoin(
-                                          query: _searchController.text
-                                              .trim()
-                                              .toLowerCase());
-                                },
-                              ),
-                            ),
+                            const SizedBox(height: 11),
+                            resultMessage != ""
+                                ? Container(
+                                    width: screenWidth(context),
+                                    decoration: BoxDecoration(
+                                      color: cardBlueColor,
+                                      borderRadius: BorderRadius.circular(15),
+                                    ),
+                                    child: Text(resultMessage,
+                                        style: const TextStyle(fontSize: 16)),
+                                  )
+                                : const SizedBox(),
                           ],
                         ),
-                        const SizedBox(height: 11),
-                        SizedBox(
-                          width: 130,
-                          height: 40,
-                          child: ElevatedButton(
-                            onPressed: () {
-                              double currentPrice =
-                                  provider.coin.first.currentPrice.toDouble();
-                              calculateValues(
-                                  currentPriceData: currentPrice,
-                                  quantity: _quatityController.text,
-                                  pricePerCoin: _pricepercoinController.text);
-                            },
-                            style: ElevatedButton.styleFrom(
-                                backgroundColor: mainBlueColor),
-                            child: Text(
-                              AppLocalizations.translate(
-                                  'Calculate', currentLang!),
-                              style: const TextStyle(
-                                  color: whiteColor, fontSize: 16),
-                            ),
-                          ),
-                        ),
-                        const SizedBox(height: 11),
-                        resultMessage != ""
-                            ? Container(
-                                width: screenWidth(context),
-                                decoration: BoxDecoration(
-                                  color: cardBlueColor,
-                                  borderRadius: BorderRadius.circular(15),
-                                ),
-                                child: Text(resultMessage,
-                                    style: const TextStyle(fontSize: 16)),
-                              )
-                            : const SizedBox(),
-                      ],
+                      ),
                     )
                   : const SizedBox(),
             ],

@@ -18,7 +18,7 @@ class _TrendingNFTSDataState extends State<TrendingNFTSData> {
   Widget build(BuildContext context) {
     currentLang = Localizations.localeOf(context).languageCode;
     return Scaffold(
-      backgroundColor: lightBlueColor,
+      backgroundColor: const Color(0xFFE1ECF5),
       appBar: AppBar(
         title: Text(
           AppLocalizations.translate('Price Change Percentage', currentLang!),
@@ -79,7 +79,7 @@ class _TrendingNFTSDataState extends State<TrendingNFTSData> {
                 ),
               ],
             ),
-            SizedBox(
+            const SizedBox(
               height: 13,
             ),
             Expanded(

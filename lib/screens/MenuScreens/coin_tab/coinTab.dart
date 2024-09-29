@@ -109,8 +109,10 @@ class _CoinScreenState extends State<CoinScreen> {
                     if (snapshot.connectionState == ConnectionState.waiting) {
                       return const Center(child: CircularProgressIndicator());
                     } else if (snapshot.hasError) {
-                      return const Center(
-                          child: Text('Sorry! Service got down, try again.'));
+                      return Center(
+                          child: Text(AppLocalizations.translate(
+                              'Sorry! Service got down, try again.',
+                              currentLang!)));
                     } else if (!snapshot.hasData || snapshot.data!.isEmpty) {
                       return Center(
                           child: Text(AppLocalizations.translate(

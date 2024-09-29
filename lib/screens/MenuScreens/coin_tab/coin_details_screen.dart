@@ -49,7 +49,7 @@ class _CoinDetailsState extends State<CoinDetails> {
   Widget build(BuildContext context) {
     currentLang = Localizations.localeOf(context).languageCode;
     return Scaffold(
-      backgroundColor: lightBlueColor,
+      backgroundColor: const Color(0xFFE1ECF5),
       appBar: AppBar(
         title: Text(
           widget.coin.name,
