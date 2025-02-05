@@ -13,7 +13,6 @@ class TrendingProvider with ChangeNotifier {
   Future<void> fetchTrendingData() async {
     final url = Uri.parse('https://api.coingecko.com/api/v3/search/trending');
     isLoading = true;
-    notifyListeners();
 
     try {
       final response = await http.get(url);

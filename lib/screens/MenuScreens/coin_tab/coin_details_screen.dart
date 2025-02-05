@@ -103,7 +103,7 @@ class _CoinDetailsState extends State<CoinDetails> {
             Container(
               padding: const EdgeInsets.all(16),
               decoration: BoxDecoration(
-                color: cardBlueColor,
+                color: cardGreenColor,
                 borderRadius: BorderRadius.circular(10),
                 boxShadow: [
                   BoxShadow(

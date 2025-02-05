@@ -97,7 +97,7 @@ class _TrendingNFTSDataState extends State<TrendingNFTSData> {
                       child: Container(
                           height: 40,
                           decoration: BoxDecoration(
-                            color: cardBlueColor,
+                            color: cardGreenColor,
                             borderRadius: BorderRadius.circular(10),
                           ),
                           child: Row(
@@ -126,6 +126,5 @@ class _TrendingNFTSDataState extends State<TrendingNFTSData> {
         ),
       ),
     );
-    ;
   }
 }

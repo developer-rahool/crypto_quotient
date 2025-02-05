@@ -16,7 +16,7 @@ class CoinSearchScreen extends StatefulWidget {
 class _CoinSearchScreenState extends State<CoinSearchScreen> {
   String? currentLang;
   final TextEditingController _searchController = TextEditingController();
-  var coinSearchData;
+  dynamic coinSearchData;
   bool _isLoading = false;
 
   bool _showCoins = true;
@@ -40,7 +40,7 @@ class _CoinSearchScreenState extends State<CoinSearchScreen> {
       await Provider.of<CoinSearchProvider>(context, listen: false)
           .fetchCoinSearchData(query);
     } catch (error) {
-      print('Error fetching coin data: $error');
+      debugPrint('Error fetching coin data: $error');
     } finally {
       setState(() {
         _isLoading = false;
@@ -107,7 +107,7 @@ class _CoinSearchScreenState extends State<CoinSearchScreen> {
                     ),
                     child: Text(
                         AppLocalizations.translate('Coins', currentLang!),
-                        style: TextStyle(color: whiteColor)),
+                        style: const TextStyle(color: whiteColor)),
                   ),
                 ),
                 const SizedBox(
@@ -122,7 +122,7 @@ class _CoinSearchScreenState extends State<CoinSearchScreen> {
                     ),
                     child: Text(
                         AppLocalizations.translate('Exchanges', currentLang!),
-                        style: TextStyle(color: whiteColor)),
+                        style: const TextStyle(color: whiteColor)),
                   ),
                 ),
               ],
@@ -142,7 +142,7 @@ class _CoinSearchScreenState extends State<CoinSearchScreen> {
                     ),
                     child: Text(
                         AppLocalizations.translate('Categories', currentLang!),
-                        style: TextStyle(color: whiteColor)),
+                        style: const TextStyle(color: whiteColor)),
                   ),
                 ),
                 const SizedBox(
@@ -156,7 +156,7 @@ class _CoinSearchScreenState extends State<CoinSearchScreen> {
                     ),
                     child: Text(
                         AppLocalizations.translate('NFTs', currentLang!),
-                        style: TextStyle(color: whiteColor)),
+                        style: const TextStyle(color: whiteColor)),
                   ),
                 ),
               ],
@@ -177,10 +177,10 @@ class _CoinSearchScreenState extends State<CoinSearchScreen> {
                                   coinSearchData.coins!.isNotEmpty)
                                 ...coinSearchData.coins!.map((coin) {
                                   return Card(
-                                    color: cardBlueColor,
+                                    color: const Color(0xFFC7E0D4),
                                     child: ListTile(
                                       leading: coin.thumb == "missing_thumb.png"
-                                          ? Text("")
+                                          ? const Text("")
                                           : Image.network(coin.thumb!),
                                       title: Text(coin.name ?? 'Unknown Coin'),
                                       subtitle: Text(coin.symbol ?? ''),
@@ -192,11 +192,11 @@ class _CoinSearchScreenState extends State<CoinSearchScreen> {
                                   coinSearchData.exchanges!.isNotEmpty)
                                 ...coinSearchData.exchanges!.map((exchange) {
                                   return Card(
-                                    color: cardBlueColor,
+                                    color: const Color(0xFFC7E0D4),
                                     child: ListTile(
                                       leading:
                                           exchange.thumb == "missing_thumb.png"
-                                              ? Text("")
+                                              ? const Text("")
                                               : Image.network(exchange.thumb!),
                                       title: Text(
                                           exchange.name ?? 'Unknown Exchange'),
@@ -209,7 +209,7 @@ class _CoinSearchScreenState extends State<CoinSearchScreen> {
                                   coinSearchData.categories!.isNotEmpty)
                                 ...coinSearchData.categories!.map((category) {
                                   return Card(
-                                    color: cardBlueColor,
+                                    color: const Color(0xFFC7E0D4),
                                     child: ListTile(
                                       title: Text(
                                         category.name ?? 'Unknown Category',
@@ -222,10 +222,10 @@ class _CoinSearchScreenState extends State<CoinSearchScreen> {
                                   coinSearchData.nfts!.isNotEmpty)
                                 ...coinSearchData.nfts!.map((nft) {
                                   return Card(
-                                    color: cardBlueColor,
+                                    color: const Color(0xFFC7E0D4),
                                     child: ListTile(
                                       leading: nft.thumb == "missing_thumb.png"
-                                          ? Text("")
+                                          ? const Text("")
                                           : Image.network(nft.thumb ?? ""),
                                       title: Text(nft.name ?? 'Unknown NFT'),
                                       subtitle: Text(nft.symbol ?? ''),

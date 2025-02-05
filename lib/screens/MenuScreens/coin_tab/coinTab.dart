@@ -25,11 +25,11 @@ class _CoinScreenState extends State<CoinScreen> {
     coinListProvider!.updateDots();
   }
 
-  @override
-  void dispose() {
-    coinListProvider!.scrollController.dispose();
-    super.dispose();
-  }
+  // @override
+  // void dispose() {
+  //   coinListProvider!.scrollController.dispose();
+  //   super.dispose();
+  // }
 
   @override
   Widget build(BuildContext context) {
@@ -140,7 +140,7 @@ class _CoinScreenState extends State<CoinScreen> {
                             padding: const EdgeInsets.all(8.0),
                             child: Container(
                               decoration: BoxDecoration(
-                                  color: cardBlueColor,
+                                  color: cardGreenColor,
                                   borderRadius: BorderRadius.circular(15)),
                               child: Padding(
                                 padding: const EdgeInsets.all(8.0),

@@ -74,11 +74,12 @@ class _MenuScreenState extends State<MenuScreen> {
       bottomNavigationBar: BottomNavigationBar(
           elevation: 2,
           type: BottomNavigationBarType.fixed,
-          selectedItemColor: mainBlueColor,
+          selectedItemColor: Colors.green,
           selectedLabelStyle: const TextStyle(fontWeight: FontWeight.bold),
           unselectedLabelStyle: const TextStyle(fontWeight: FontWeight.w600),
           unselectedItemColor: midBlackColor,
           currentIndex: selectIndex,
+          backgroundColor: const Color.fromARGB(255, 228, 248, 238),
           items: [
             BottomNavigationBarItem(
                 icon: const Icon(Icons.currency_exchange),

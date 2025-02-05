@@ -270,7 +270,7 @@ class _CalculationScreenState extends State<CalculationScreen> {
                                 ? Container(
                                     width: screenWidth(context),
                                     decoration: BoxDecoration(
-                                      color: cardBlueColor,
+                                      color: cardGreenColor,
                                       borderRadius: BorderRadius.circular(15),
                                     ),
                                     child: Text(resultMessage,
@@ -338,7 +338,7 @@ class _CalculationScreenState extends State<CalculationScreen> {
             padding: const EdgeInsets.all(8.0),
             child: Container(
               decoration: BoxDecoration(
-                color: cardBlueColor,
+                color: cardGreenColor,
                 borderRadius: BorderRadius.circular(15),
               ),
               child: Padding(

@@ -73,7 +73,7 @@ class _TrendingScreenState extends State<TrendingScreen> {
                             padding: const EdgeInsets.all(8.0),
                             child: Container(
                               decoration: BoxDecoration(
-                                  color: cardBlueColor,
+                                  color: cardGreenColor,
                                   borderRadius: BorderRadius.circular(10)),
                               child: Padding(
                                 padding: const EdgeInsets.all(8.0),
@@ -248,7 +248,7 @@ class _TrendingScreenState extends State<TrendingScreen> {
                             padding: const EdgeInsets.all(8.0),
                             child: Container(
                               decoration: BoxDecoration(
-                                  color: cardBlueColor,
+                                  color: cardGreenColor,
                                   borderRadius: BorderRadius.circular(10)),
                               child: Padding(
                                 padding: const EdgeInsets.all(8.0),

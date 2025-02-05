@@ -139,7 +139,7 @@ class _NewsScreenState extends State<NewsScreen> {
                                 article.urlToImage = "";
                               }
                               return Card(
-                                color: whiteColor,
+                                color: const Color(0xFFC7E0D4),
                                 child: Padding(
                                   padding: const EdgeInsets.all(8.0),
                                   child: ListTile(

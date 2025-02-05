@@ -52,7 +52,7 @@ class Category {
   String? name;
   double? marketCap1HChange;
   String? slug;
-  int? coinsCount;
+  String? coinsCount;
   CategoryData? data;
 
   Category({
