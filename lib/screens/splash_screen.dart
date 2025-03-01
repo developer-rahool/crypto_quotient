@@ -7,7 +7,7 @@ import 'package:crypto_quotient/screens/menu_screen.dart';
 
 class SplashScreen extends StatefulWidget {
   final Function(String) onChangeLanguage;
-  SplashScreen({super.key, required this.onChangeLanguage});
+  const SplashScreen({super.key, required this.onChangeLanguage});
 
   @override
   State<SplashScreen> createState() => _SplashScreenState();

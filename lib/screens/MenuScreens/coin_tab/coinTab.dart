@@ -1,3 +1,5 @@
+// ignore_for_file: file_names
+
 import 'package:crypto_quotient/const.dart';
 import 'package:crypto_quotient/controller/coinList_provider.dart';
 import 'package:flutter/material.dart';
@@ -25,12 +27,6 @@ class _CoinScreenState extends State<CoinScreen> {
     coinListProvider!.updateDots();
   }
 
-  // @override
-  // void dispose() {
-  //   coinListProvider!.scrollController.dispose();
-  //   super.dispose();
-  // }
-
   @override
   Widget build(BuildContext context) {
     currentLang = Localizations.localeOf(context).languageCode;
@@ -54,7 +50,8 @@ class _CoinScreenState extends State<CoinScreen> {
                       itemCount: coinListProvider!.imagesPath.length,
                       itemBuilder: (context, index) {
                         return Image.asset(
-                          coinListProvider!.imagesPath[index],
+                          coinListProvider!.imagePath +
+                              coinListProvider!.imagesPath[index],
                           fit: BoxFit.cover,
                           scale: 5,
                         );

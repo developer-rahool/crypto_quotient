@@ -1,3 +1,5 @@
+// ignore_for_file: file_names
+
 import 'package:crypto_quotient/models/coinlist_model.dart';
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
@@ -11,18 +13,19 @@ class CoinListProvider with ChangeNotifier {
 //
   PageController pageController = PageController();
   int currentIndex = 0;
+  String imagePath = "assets/crypto/";
   List<String> imagesPath = [
-    "assets/crypto/1.jpg",
-    "assets/crypto/2.jpg",
-    "assets/crypto/3.jpg",
-    "assets/crypto/4.jpg",
-    "assets/crypto/5.jpg",
-    "assets/crypto/6.jpg",
-    "assets/crypto/7.jpg",
-    "assets/crypto/8.jpg",
-    "assets/crypto/9.jpg",
-    "assets/crypto/10.jpg",
-    "assets/crypto/11.png",
+    "1.jpg",
+    "2.jpg",
+    "3.jpg",
+    "4.jpg",
+    "5.jpg",
+    "6.jpg",
+    "7.jpg",
+    "8.jpg",
+    "9.jpg",
+    "10.jpg",
+    "11.jpg",
   ];
   updateDots() {
     pageController.addListener(() {
@@ -79,7 +82,7 @@ class CoinListProvider with ChangeNotifier {
   //
   String selectedPeriod = '1d';
   List<FlSpot> chartData = [];
-  ChartDataUpdate(var value) {
+  chartDataUpdate(var value) {
     chartData = value;
     notifyListeners();
   }

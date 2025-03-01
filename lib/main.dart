@@ -29,7 +29,7 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  Locale _locale = Locale('en'); // Default language
+  Locale _locale = const Locale('en'); // Default language
 
   void _changeLanguage(String languageCode) {
     setState(() {

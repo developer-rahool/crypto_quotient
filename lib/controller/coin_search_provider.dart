@@ -1,3 +1,5 @@
+// ignore_for_file: use_rethrow_when_possible
+
 import 'package:crypto_quotient/models/search_coin_model.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;

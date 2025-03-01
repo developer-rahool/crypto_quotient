@@ -9,9 +9,10 @@ import 'package:fl_chart/fl_chart.dart'; // Chart library
 
 class CoinDetails extends StatefulWidget {
   final CoinListModel coin;
-  const CoinDetails({Key? key, required this.coin}) : super(key: key);
+  const CoinDetails({super.key, required this.coin});
 
   @override
+  // ignore: library_private_types_in_public_api
   _CoinDetailsState createState() => _CoinDetailsState();
 }
 
@@ -29,7 +30,7 @@ class _CoinDetailsState extends State<CoinDetails> {
   _fetchChartData() async {
     List<FlSpot> data = await Services()
         .fetchChart(widget.coin.id, coinListProvider.selectedPeriod);
-    coinListProvider.ChartDataUpdate(data);
+    coinListProvider.chartDataUpdate(data);
   }
 
   _onPeriodChange(String period) {

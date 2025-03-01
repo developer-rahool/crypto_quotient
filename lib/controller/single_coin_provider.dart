@@ -30,7 +30,7 @@ class SingleCoinProvider with ChangeNotifier {
         throw Exception('Failed to load coin data');
       }
     } catch (error) {
-      print('Error fetching coin: $error');
+      debugPrint('Error fetching coin: $error');
     } finally {
       _isLoading = false;
       notifyListeners(); // Notify once loading is done and data is available

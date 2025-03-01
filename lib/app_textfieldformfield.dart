@@ -2,12 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:crypto_quotient/const.dart';
 
+// ignore: must_be_immutable
 class AppTextFormField extends StatelessWidget {
   Widget? suffixIcon;
   Widget? prefixIcon;
-  final TextEditingController? ctrl;
+  TextEditingController? ctrl;
   TextInputAction? textInputAction;
-  final String? hintText;
+  String? hintText;
   double? hintsize;
   double? radius;
   EdgeInsetsGeometry? contentPadding;
@@ -16,8 +17,8 @@ class AppTextFormField extends StatelessWidget {
   //final bool floatingLabelBehavior;
   bool? obscureText;
   Color? labelColor;
-  final Color? greyEnable;
-  final String? labelText;
+  Color? greyEnable;
+  String? labelText;
   double? labelsize;
   double? width;
   double? height;
@@ -26,19 +27,19 @@ class AppTextFormField extends StatelessWidget {
   int? maxLengthLine;
   BoxConstraints? suffixIconConstraints;
   Iterable<String>? autofillHints;
-  final TextInputType? keyboardType;
-  final Function()? onEditingComplete;
+  TextInputType? keyboardType;
+  Function()? onEditingComplete;
   String? Function(String?)? validator;
   String? Function(String?)? onChanged;
-  final FocusNode? focusNode;
-  final Function? onFieldSubmitted;
-  final TextEditingController appController;
-  final bool readOnlyColor;
-  final bool? readOnlyField;
-  final void Function()? onTap;
-  final List<TextInputFormatter>? inputFormatterText;
-  final bool? enabled;
-  final bool isRequiredTextField;
+  FocusNode? focusNode;
+  Function? onFieldSubmitted;
+  TextEditingController appController;
+  bool readOnlyColor;
+  bool? readOnlyField;
+  void Function()? onTap;
+  List<TextInputFormatter>? inputFormatterText;
+  bool? enabled;
+  bool isRequiredTextField;
 
   AppTextFormField({
     super.key,

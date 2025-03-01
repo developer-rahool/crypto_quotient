@@ -21,9 +21,9 @@ class _MenuScreenState extends State<MenuScreen> {
   var selectIndex = 0;
   final List<Widget> _tabList = [
     const CoinScreen(),
-    TrendingScreen(),
+    const TrendingScreen(),
     const NewsScreen(),
-    CalculationScreen(),
+    const CalculationScreen(),
     const CoinSearchScreen()
   ];
 

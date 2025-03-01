@@ -1,3 +1,5 @@
+// ignore_for_file: depend_on_referenced_packages, must_be_immutable
+
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:intl/intl.dart';
@@ -103,7 +105,7 @@ class CellContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.symmetric(vertical: 2),
+      margin: const EdgeInsets.symmetric(vertical: 2),
       decoration: BoxDecoration(
         color: lightBlackColor,
         borderRadius: BorderRadius.circular(10),
@@ -153,7 +155,7 @@ toast(BuildContext context, {String? msg}) {
       )));
 }
 
-AppBar AppBarWidget(
+AppBar appBarWidget(
     {bool backButton = true, String? title, List<Widget>? action}) {
   return AppBar(
     toolbarHeight: 75,

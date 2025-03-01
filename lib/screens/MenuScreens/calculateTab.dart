@@ -1,5 +1,6 @@
+// ignore_for_file: library_private_types_in_public_api, file_names
+
 import 'package:crypto_quotient/app_textfieldformfield.dart';
-import 'package:crypto_quotient/controller/coinList_provider.dart';
 import 'package:crypto_quotient/controller/single_coin_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';

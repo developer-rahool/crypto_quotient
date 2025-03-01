@@ -16,11 +16,11 @@ class NewsProvider with ChangeNotifier {
     const baseUrl = "https://newsapi.org/v2/everything";
     const apiKey =
         "90fa159cf6b240dc957c6932f7707be5"; // Replace with your API key
-   // const deviceLanguage = "en";
+    // const deviceLanguage = "en";
 
     try {
-      final response = await http.get(Uri.parse(
-          '$baseUrl?q=$query&language=$lang&apiKey=$apiKey'));
+      final response = await http
+          .get(Uri.parse('$baseUrl?q=$query&language=$lang&apiKey=$apiKey'));
 
       if (response.statusCode == 200) {
         final jsonData = json.decode(response.body);
@@ -32,10 +32,10 @@ class NewsProvider with ChangeNotifier {
               element.description == "[Removed]",
         );
       } else {
-        print("Failed to fetch news: ${response.statusCode}");
+        debugPrint("Failed to fetch news: ${response.statusCode}");
       }
     } catch (error) {
-      print("Error: $error");
+      debugPrint("Error: $error");
     }
 
     _isLoading = false;
