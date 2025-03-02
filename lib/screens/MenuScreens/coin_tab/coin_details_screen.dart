@@ -38,14 +38,6 @@ class _CoinDetailsState extends State<CoinDetails> {
     _fetchChartData();
   }
 
-  // @override
-  // void dispose() {
-  //   coinListProvider.chartData.clear();
-  //   coinListProvider.selectedPeriod = '1d';
-  //   context.read<CoinListProvider>().loadData(context);
-  //   super.dispose();
-  // }
-
   @override
   Widget build(BuildContext context) {
     currentLang = Localizations.localeOf(context).languageCode;
@@ -58,97 +50,100 @@ class _CoinDetailsState extends State<CoinDetails> {
               fontSize: 16, fontWeight: FontWeight.bold, color: mainBlueColor),
         ),
       ),
-      body: Padding(
-        padding: const EdgeInsets.all(12.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            // Trade Chart
-            Consumer<CoinListProvider>(builder: (context, provider, child) {
-              return SizedBox(
-                height: 200,
-                child: LineChart(
-                  LineChartData(
-                    lineBarsData: [
-                      LineChartBarData(
-                        spots: provider.chartData,
-                        isCurved: false,
-                        isStepLineChart: false,
-                        color: mainBlueColor,
-                        dotData: const FlDotData(show: false),
-                      ),
-                    ],
+      body: SingleChildScrollView(
+        child: Padding(
+          padding: const EdgeInsets.all(12.0),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              // Trade Chart
+              Consumer<CoinListProvider>(builder: (context, provider, child) {
+                return SizedBox(
+                  height: 200,
+                  child: LineChart(
+                    LineChartData(
+                      lineBarsData: [
+                        LineChartBarData(
+                          spots: provider.chartData,
+                          isCurved: false,
+                          isStepLineChart: false,
+                          color: mainBlueColor,
+                          dotData: const FlDotData(show: false),
+                        ),
+                      ],
+                    ),
                   ),
+                );
+              }),
+              const SizedBox(height: 20),
+              // Period Selection Buttons
+              Consumer<CoinListProvider>(builder: (context, provider, child) {
+                return Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    _buildPeriodButton('1d',
+                        AppLocalizations.translate('1 Day', currentLang!)),
+                    const SizedBox(width: 10),
+                    _buildPeriodButton('15d',
+                        AppLocalizations.translate('15 Days', currentLang!)),
+                    const SizedBox(width: 10),
+                    _buildPeriodButton('30d',
+                        AppLocalizations.translate('30 Days', currentLang!)),
+                  ],
+                );
+              }),
+              const SizedBox(height: 20),
+              // Coin Information
+              Container(
+                padding: const EdgeInsets.all(16),
+                decoration: BoxDecoration(
+                  color: cardGreenColor,
+                  borderRadius: BorderRadius.circular(10),
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.grey.shade500,
+                      blurRadius: 5,
+                      spreadRadius: 3,
+                    ),
+                  ],
                 ),
-              );
-            }),
-            const SizedBox(height: 20),
-            // Period Selection Buttons
-            Consumer<CoinListProvider>(builder: (context, provider, child) {
-              return Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  _buildPeriodButton(
-                      '1d', AppLocalizations.translate('1 Day', currentLang!)),
-                  const SizedBox(width: 10),
-                  _buildPeriodButton('15d',
-                      AppLocalizations.translate('15 Days', currentLang!)),
-                  const SizedBox(width: 10),
-                  _buildPeriodButton('30d',
-                      AppLocalizations.translate('30 Days', currentLang!)),
-                ],
-              );
-            }),
-            const SizedBox(height: 20),
-            // Coin Information
-            Container(
-              padding: const EdgeInsets.all(16),
-              decoration: BoxDecoration(
-                color: cardGreenColor,
-                borderRadius: BorderRadius.circular(10),
-                boxShadow: [
-                  BoxShadow(
-                    color: Colors.grey.withOpacity(0.3),
-                    blurRadius: 5,
-                    spreadRadius: 3,
-                  ),
-                ],
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    _buildCoinDetail(
+                        AppLocalizations.translate(
+                            'Circulating Supply: ', currentLang!),
+                        widget.coin.circulatingSupply.toString()),
+                    _buildCoinDetail(
+                        AppLocalizations.translate(
+                            'Total Supply: ', currentLang!),
+                        widget.coin.totalSupply.toString()),
+                    _buildCoinDetail(
+                        AppLocalizations.translate('ATH: ', currentLang!),
+                        widget.coin.ath.toString()),
+                    _buildCoinDetail(
+                        AppLocalizations.translate(
+                            'ATH Change %: ', currentLang!),
+                        widget.coin.priceChangePercentage24H.toString()),
+                    _buildCoinDetail(
+                        AppLocalizations.translate('High 24H: ', currentLang!),
+                        widget.coin.high24H.toString()),
+                    _buildCoinDetail(
+                        AppLocalizations.translate('Low 24H: ', currentLang!),
+                        widget.coin.low24H.toString()),
+                    _buildCoinDetail(
+                        AppLocalizations.translate(
+                            'Market Cap: ', currentLang!),
+                        widget.coin.marketCap.toString()),
+                    _buildCoinDetail(
+                        AppLocalizations.translate(
+                            'Market Cap Rank: ', currentLang!),
+                        widget.coin.marketCapRank.toString()),
+                  ],
+                ),
               ),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  _buildCoinDetail(
-                      AppLocalizations.translate(
-                          'Circulating Supply: ', currentLang!),
-                      widget.coin.circulatingSupply.toString()),
-                  _buildCoinDetail(
-                      AppLocalizations.translate(
-                          'Total Supply: ', currentLang!),
-                      widget.coin.totalSupply.toString()),
-                  _buildCoinDetail(
-                      AppLocalizations.translate('ATH: ', currentLang!),
-                      widget.coin.ath.toString()),
-                  _buildCoinDetail(
-                      AppLocalizations.translate(
-                          'ATH Change %: ', currentLang!),
-                      widget.coin.priceChangePercentage24H.toString()),
-                  _buildCoinDetail(
-                      AppLocalizations.translate('High 24H: ', currentLang!),
-                      widget.coin.high24H.toString()),
-                  _buildCoinDetail(
-                      AppLocalizations.translate('Low 24H: ', currentLang!),
-                      widget.coin.low24H.toString()),
-                  _buildCoinDetail(
-                      AppLocalizations.translate('Market Cap: ', currentLang!),
-                      widget.coin.marketCap.toString()),
-                  _buildCoinDetail(
-                      AppLocalizations.translate(
-                          'Market Cap Rank: ', currentLang!),
-                      widget.coin.marketCapRank.toString()),
-                ],
-              ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );

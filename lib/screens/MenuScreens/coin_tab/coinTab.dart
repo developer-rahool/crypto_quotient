@@ -43,20 +43,18 @@ class _CoinScreenState extends State<CoinScreen> {
                 height: 150,
                 child: Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 9),
-                  child: Expanded(
-                    child: PageView.builder(
-                      controller: coinListProvider!.pageController,
-                      scrollDirection: Axis.horizontal,
-                      itemCount: coinListProvider!.imagesPath.length,
-                      itemBuilder: (context, index) {
-                        return Image.asset(
-                          coinListProvider!.imagePath +
-                              coinListProvider!.imagesPath[index],
-                          fit: BoxFit.cover,
-                          scale: 5,
-                        );
-                      },
-                    ),
+                  child: PageView.builder(
+                    controller: coinListProvider!.pageController,
+                    scrollDirection: Axis.horizontal,
+                    itemCount: coinListProvider!.imagesPath.length,
+                    itemBuilder: (context, index) {
+                      return Image.asset(
+                        coinListProvider!.imagePath +
+                            coinListProvider!.imagesPath[index],
+                        fit: BoxFit.cover,
+                        scale: 5,
+                      );
+                    },
                   ),
                 ),
               ),

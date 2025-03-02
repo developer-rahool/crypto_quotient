@@ -1,6 +1,4 @@
 class AppLocalizations {
-  static const List<String> supportedLanguages = ['en', 'zh'];
-
   static const Map<String, Map<String, String>> _localizedValues = {
     'en': {
       'lang': 'English',
@@ -78,7 +76,8 @@ class AppLocalizations {
       'ATH': 'ATH',
       'ATH Change %': 'ATH Change %',
       'Market Cap Rank: ': 'Market Cap Rank: ',
-      'Sorry! Service got down, try again.': 'Sorry! Service got down, try again.'
+      'Sorry! Service got down, try again.':
+          'Sorry! Service got down, try again.'
     },
     "zh": {
       "lang": "中文",
@@ -241,7 +240,8 @@ class AppLocalizations {
       "ATH: ": "एटीएच",
       "ATH Change %: ": "एटीएच परिवर्तन %",
       "Market Cap Rank: ": "मार्केट कैप रैंक:",
-      'Sorry! Service got down, try again.': 'क्षमा मांगना! सेवा बंद हो गई, पुनः प्रयास करें.'
+      'Sorry! Service got down, try again.':
+          'क्षमा मांगना! सेवा बंद हो गई, पुनः प्रयास करें.'
     }
   };
 
